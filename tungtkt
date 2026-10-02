@@ -1,0 +1,388 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anh Xin Lỗi Em ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6c9, #ffe4ec, #ffc0cb);
+}
+
+/* Khung chính */
+.card {
+    width: 90%;
+    max-width: 650px;
+    padding: 40px 30px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(255, 50, 100, 0.3);
+    z-index: 10;
+    animation: show 1s ease;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Trái tim */
+.big-heart {
+    font-size: 75px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+h1 {
+    margin: 15px 0;
+    color: #ff3f78;
+    font-size: 40px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Nội dung */
+.message {
+    background: #fff4f8;
+    border: 2px solid #ffd1df;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: left;
+    line-height: 1.8;
+    color: #444;
+}
+
+.message strong {
+    color: #ff3f78;
+}
+
+/* Nút */
+.buttons {
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+    padding: 14px 25px;
+    margin: 5px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes {
+    background: #ff4f87;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255,79,135,0.4);
+}
+
+.yes:hover {
+    transform: scale(1.08);
+    background: #ff286b;
+}
+
+.no {
+    background: #eeeeee;
+    color: #555;
+}
+
+.no:hover {
+    transform: translateX(80px);
+}
+
+#result {
+    margin-top: 20px;
+    color: #ff3f78;
+    font-size: 21px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #888;
+    font-style: italic;
+}
+
+/* Tim bay */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: fly 6s linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Màn hình cảm ơn */
+.love-message {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffe1eb;
+    color: #ff3975;
+    font-size: 20px;
+    animation: show 0.8s ease;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="card">
+
+    <div class="big-heart">❤️</div>
+
+    <h1>Anh xin lỗi em 🥺</h1>
+
+    <p class="subtitle">
+        Có một điều anh muốn nói với em...
+    </p>
+
+    <div class="message">
+
+        <p>Em à...</p>
+
+        <br>
+
+        <p>
+            Anh biết thời gian vừa rồi anh đã làm em buồn.
+            Có thể những lời nói hay hành động của anh
+            đã khiến em tổn thương.
+        </p>
+
+        <br>
+
+        <p>
+            Anh không muốn lấy bất kỳ lý do nào để biện minh
+            cho những gì mình đã làm.
+            <strong>Anh biết mình sai.</strong>
+        </p>
+
+        <br>
+
+        <p>
+            Anh chỉ muốn nói rằng:
+            <strong>anh thật sự xin lỗi em.</strong>
+        </p>
+
+        <br>
+
+        <p>
+            Anh rất trân trọng em và những khoảng thời gian
+            mà hai đứa đã có với nhau.
+            Anh không muốn vì một phút nóng giận hay một lỗi lầm
+            mà khiến em phải buồn.
+        </p>
+
+        <br>
+
+        <p>
+            Anh sẽ cố gắng thay đổi,
+            biết lắng nghe em nhiều hơn
+            và suy nghĩ kỹ hơn trước khi làm điều gì.
+        </p>
+
+        <br>
+
+        <p style="text-align:center;font-size:22px;">
+            <strong>Anh xin lỗi em rất nhiều ❤️</strong>
+        </p>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <button class="yes" onclick="forgive()">
+            💗 Em tha lỗi cho anh nhé?
+        </button>
+
+        <button class="no" onclick="notYet()">
+            😤 Chưa tha đâu!
+        </button>
+
+    </div>
+
+
+    <div id="result"></div>
+
+
+    <div class="love-message" id="love">
+
+        🥹❤️ Cảm ơn em rất nhiều ❤️🥹
+
+        <br><br>
+
+        Anh sẽ cố gắng để không làm em buồn
+        như thế này nữa.
+
+        <br><br>
+
+        💗 Anh thương em 💗
+
+    </div>
+
+
+    <div class="signature">
+        — Một người thật sự không muốn mất em ❤️
+    </div>
+
+</div>
+
+
+<script>
+
+/* Khi bấm tha lỗi */
+function forgive() {
+
+    document.getElementById("result").innerHTML =
+        "🥹❤️ Cảm ơn em vì đã tha lỗi cho anh!";
+
+    document.getElementById("love").style.display =
+        "block";
+
+    createHearts(30);
+}
+
+
+/* Khi chưa tha lỗi */
+function notYet() {
+
+    document.getElementById("result").innerHTML =
+        "🥺 Anh biết anh sai rồi... cho anh cơ hội sửa sai nhé?";
+
+    createHearts(10);
+}
+
+
+/* Tạo trái tim */
+function createHearts(number) {
+
+    for (let i = 0; i < number; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            ["❤️", "💗", "💕", "💖", "💘"][Math.floor(Math.random() * 5)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 30) + "px";
+
+        heart.style.animationDuration =
+            (4 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 8000);
+    }
+}
+
+
+/* Tự động tạo tim */
+setInterval(function() {
+
+    createHearts(1);
+
+}, 800);
+
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
+```
